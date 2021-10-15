@@ -1,0 +1,48 @@
+#elk stack playbook
+---
+- hosts: elk
+  become: true 
+  tasks:
+#use apt module
+  - name: install docker.io
+    apt: 
+      update_cache: yes
+      force_apt_get: yes
+      name: docker.io
+      state: present
+#use apt module
+  - name: install python
+    apt:
+      force_apt_get: yes
+      name: python3-pip
+      state: present
+#use sysctl module
+  - name: use more memory
+    ansible.posix.sysctl:
+      name: vm.max_map_count
+      value: '262144'
+      reload: yes
+      state: present
+#use pip module
+  - name: install docker pip
+    pip:
+      name: docker
+      state: present
+#use docker_container module
+  - name: configure docker container
+    docker_container: 
+      name: elk
+      image: sebp/elk:761
+      state: started
+      restart_policy: always
+      # please list the ports that ELK runs on
+      published_ports:
+        - 5601:5601
+        - 9200:9200
+        - 5044:5044
+#use systemd module
+  - name: enable service docker on boot
+    systemd:    
+      name: docker     
+      enabled: yes
+

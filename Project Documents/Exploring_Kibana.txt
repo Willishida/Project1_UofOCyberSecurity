@@ -1,0 +1,88 @@
+Add the sample web log data to Kibana - Completed
+
+
+Answer the following questions:
+
+
+228 unique visitors from India
+
+
+48 from China - 11 on osx
+
+
+26 - 404 responses; 22 - 503 responses
+
+
+China
+
+
+10 AM
+
+
+Types of files
+
+
+Gz - gzip file
+
+
+Css - used to display website contents
+
+
+Zip - compressed file
+
+
+Deb - debian file
+
+
+Rpm - linux installation packages
+
+
+There was an average of 15,709 bytes on 8/1/2021 at 18:00, this is significantly more byte activity than anything within the same time range. The average number of users was also quite average at this time compared to the amount of byte activity.
+
+
+Filter data:
+
+
+8/1/2021 @ 18:00:00:00 > 8/1/2021 @ 21:00:00:00
+
+
+RPM 
+
+
+India
+
+
+200
+
+
+Discover:
+
+
+35.143.166.159
+
+
+Lat: 43.34121 lon: -73.6103075
+
+
+Win8
+
+
+artifcats.elastic.co/downloads/beats/metricbeat
+
+
+Facebook.com/success/jay-c-buckey
+
+
+Finish investigation:
+
+
+It appears the user was downloaded Linux files.
+
+
+Most likely the files were not malicious.
+
+
+The huge amount of byte activity was suspicious.
+
+
+The referral from Facebook could be of concern.
